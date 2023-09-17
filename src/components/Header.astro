@@ -1,0 +1,125 @@
+---
+import Button from "./Button.astro";
+import Logo from "./Logo.astro";
+const background = "#24053E";
+const fontColor = "#FFF";
+const greenColor = "#44FFA1";
+---
+
+<header class='header'>
+  <div class='header-div'>
+    <Logo mode='light' />
+    <a class='header-a' href='#'>Apply for access</a>
+  </div>
+  <section class='header-hero'>
+    <article class='header-hero-article'>
+      <h1 class='header-hero-h1'>
+        Data <span class='header-hero-span'>tailored</span> to your needs.
+      </h1>
+      <Button description='Learn more' />
+      <figure class='header-hero-figure'>
+        <img src='./assets/images/image-hero.webp' alt='image-hero' />
+      </figure>
+    </article>
+  </section>
+  <div class='header-hero-figure-pattern-1'>
+    <img src='./assets/images/bg-pattern-1.svg' alt='image-hero' />
+  </div>
+  <div class='header-hero-figure-pattern-2'>
+    <img src='./assets/images/bg-pattern-2.svg' alt='image-hero' />
+  </div>
+</header>
+
+<style define:vars={{ background, fontColor, greenColor }}>
+  .header {
+    position: relative;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 45.625rem;
+    padding-top: 1.9rem;
+    background: url("./assets/images/bg-pattern-4.svg") no-repeat center;
+    background-size: cover;
+  }
+
+  .header-div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 69.625rem;
+  }
+
+  .header-a {
+    color: var(--fontColor);
+    font-family: Manrope;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: -0.01125rem;
+  }
+
+  .header-hero {
+    display: flex;
+    justify-content: center;
+    max-width: 69.625rem;
+    width: 100%;
+    margin-top: 3.6rem;
+  }
+
+  .header-hero-article {
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-flow: column nowrap;
+    widows: 100%;
+    height: 556.1px;
+  }
+
+  .header-hero-h1 {
+    max-width: 39.6875rem;
+    margin-bottom: 2.31rem;
+    text-align: center;
+    font-family: Fraunces 144pt;
+    font-size: 5rem;
+    font-weight: 600;
+    line-height: 5rem;
+    color: var(--fontColor);
+  }
+
+  .header-hero-span {
+    display: inline-block;
+  }
+
+  .header-hero-span::after,
+  .header-a::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 0.1875rem;
+    background-color: var(--greenColor);
+  }
+
+  .header-hero-figure {
+    position: absolute;
+    bottom: -27%;
+    max-width: 44.6875rem;
+  }
+
+  .header-hero-figure-pattern-1 {
+    position: absolute;
+    top: 16%;
+    left: -7.7%;
+    width: 16.89338rem;
+  }
+
+  .header-hero-figure-pattern-2 {
+    position: absolute;
+    bottom: 40%;
+    right: -3%;
+    width: 8.85rem;
+  }
+</style>

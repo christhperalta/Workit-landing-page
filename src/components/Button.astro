@@ -1,0 +1,23 @@
+---
+const { description } = Astro.props;
+const btnColor = "#44FFA1";
+const fontColor = " #24053E";
+---
+
+<button class='btn'>{description}</button>
+
+<style define:vars={{ btnColor, fontColor }}>
+  .btn {
+    cursor: pointer;
+    padding: 0.8rem 2.03rem 1rem 1.97rem;
+    border: none;
+    font-family: Manrope;
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: -0.01125rem;
+    background-color: var(--btnColor);
+    color: var(--fontColor);
+    
+  }
+</style>
