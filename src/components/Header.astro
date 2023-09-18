@@ -1,7 +1,6 @@
 ---
 import Button from "./Button.astro";
 import Logo from "./Logo.astro";
-const background = "#24053E";
 const fontColor = "#FFF";
 const greenColor = "#44FFA1";
 ---
@@ -13,24 +12,24 @@ const greenColor = "#44FFA1";
   </div>
   <section class='header-hero'>
     <article class='header-hero-article'>
-      <h1 class='header-hero-h1'>
+      <h2 class='header-hero-h2'>
         Data <span class='header-hero-span'>tailored</span> to your needs.
-      </h1>
+      </h2>
       <Button description='Learn more' />
       <figure class='header-hero-figure'>
         <img src='./assets/images/image-hero.webp' alt='image-hero' />
       </figure>
     </article>
   </section>
-  <div class='header-hero-figure-pattern-1'>
+  <figure class='header-hero-figure-pattern-1'>
     <img src='./assets/images/bg-pattern-1.svg' alt='image-hero' />
-  </div>
-  <div class='header-hero-figure-pattern-2'>
+  </figure>
+  <figure class='header-hero-figure-pattern-2'>
     <img src='./assets/images/bg-pattern-2.svg' alt='image-hero' />
-  </div>
+  </figure>
 </header>
 
-<style define:vars={{ background, fontColor, greenColor }}>
+<style define:vars={{ fontColor, greenColor }}>
   .header {
     position: relative;
     display: flex;
@@ -40,6 +39,7 @@ const greenColor = "#44FFA1";
     width: 100%;
     height: 45.625rem;
     padding-top: 1.9rem;
+    z-index: 100;
     background: url("./assets/images/bg-pattern-4.svg") no-repeat center;
     background-size: cover;
   }
@@ -79,7 +79,7 @@ const greenColor = "#44FFA1";
     height: 556.1px;
   }
 
-  .header-hero-h1 {
+  .header-hero-h2 {
     max-width: 39.6875rem;
     margin-bottom: 2.31rem;
     text-align: center;

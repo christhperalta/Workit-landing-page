@@ -1,0 +1,60 @@
+---
+import Logo from "./Logo.astro";
+---
+
+<footer class='footer'>
+  <div class='footer-container'>
+    <Logo mode='dark' />
+    <ul class='footer-ul'>
+      <li class='footer-ul-li'>
+        <img
+          src='./assets/images/icon-facebook.svg'
+          alt='icon-facebook.svg'
+        />
+      </li>
+      <li class='footer-ul-li'>
+        <img
+          src='./assets/images/icon-twitter.svg'
+          alt='icon-twitter.svg'
+        />
+      </li>
+      <li class='footer-ul-li'>
+        <img
+          src='./assets/images/icon-instagram.svg'
+          alt='icon-instagram.svg'
+        />
+      </li>
+    </ul>
+  </div>
+</footer>
+
+<style>
+    .footer{
+        display: flex;
+        justify-content: center;
+        width: 100%;
+        height: 10.269rem;
+    }
+
+    .footer-container{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-flow: column nowrap;
+      width: 7.25rem;
+      height:  6.389rem;
+    }
+
+    .footer-ul{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        justify-content:space-between;
+
+    }
+
+
+    .footer-ul-li{
+        width: 1rem;
+    }
+</style>

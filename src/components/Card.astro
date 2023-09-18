@@ -1,0 +1,51 @@
+---
+const { number, title, text } = Astro.props;
+const DarkPurple = "#24053E";
+const DavysGrey = " #584D62";
+---
+
+<article class='main-article'>
+  <span class='main-article-span'>{number}</span>
+  <h2 class='main-article-h2'>{title}</h2>
+  <p class='main-article-p'>{text}</p>
+</article>
+
+<style define:vars={{ DarkPurple,DavysGrey }}>
+  .main-article {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    justify-items: center;
+    width: 22.125rem;
+  }
+
+  .main-article-span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 3.5rem;
+    height: 3.5rem;
+    border: 1px solid var(--DavysGrey);
+    border-radius: 50%;
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: Fraunces 144pt;
+    margin-bottom: 4rem;
+  }
+
+  .main-article-h2 {
+    margin-bottom: 1.75rem;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 2.5rem;
+    color: var(--DarkPurple);
+  }
+
+  .main-article-p {
+    font-family: Manrope;
+    font-weight: 400;
+    font-size: 1.125rem;
+    text-align: center;
+    line-height: 2rem;
+  }
+</style>

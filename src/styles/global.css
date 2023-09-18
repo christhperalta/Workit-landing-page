@@ -124,11 +124,12 @@ svg {
 
 /* Configuramos la tipografía para toda la web */
 body {
-    width: 100%;
+    width: width: 90rem;
     min-height: 100vh;
     font-size: 100%;
-    /* (Opcional) */
-    hyphens: auto;
+    font-family: "Fraunces", serif;
+    overflow-x: hidden;
+    background-color:#FFF ;
     /* (Opcional) */
     font-smooth: always;
     /* (Opcional) */
