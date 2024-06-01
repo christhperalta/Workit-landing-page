@@ -1,3 +1,4 @@
+import React, { useEffect, useRef } from "react";
 import { GreenButton } from "..";
 import "./Main.scss";
 
@@ -7,7 +8,11 @@ interface Products {
   text: string;
 }
 
-const ListProducts: Products[] = [
+interface ProductsListPrpos {
+  listProducts: Products[];
+}
+
+const ProductData: Products[] = [
   {
     number: 1,
     title: "Actionable insights",
@@ -29,45 +34,95 @@ const ListProducts: Products[] = [
 ];
 
 const Main = (): JSX.Element => {
+  const elementsRef = useRef<NodeListOf<Element> | null>(null);
+
+  const handleCallback = (entries: IntersectionObserverEntry[]): void => {
+    const [entry] = entries;
+
+    if (!entry.isIntersecting) return;
+    entry.target.classList.remove("Main-el-hidden");
+  };
+
+  useEffect(() => {
+    elementsRef.current = document.querySelectorAll(".Main-el-hidden");
+
+    const observer = new IntersectionObserver(handleCallback, {
+      root: null,
+      threshold: 0.15,
+    });
+
+    elementsRef.current.forEach((element) => {
+      observer.observe(element);
+    });
+
+    console.log(elementsRef.current);
+
+    return () => {
+      if (elementsRef.current) {
+        elementsRef.current.forEach((element) => {
+          observer.unobserve(element);
+        });
+      }
+    };
+  }, []);
+
   return (
     <main className="Main">
       <section className="Main-seccion1">
-        <div className="Main-div">
-          <ul className="Main-ul">
-            {ListProducts?.map(({ number, title, text }) => (
-              <li className="Main-li" key={number}>
-                <article className="Main-ul-article">
-                  <div className="Main-ul-article-circle">
-                    <p className="Main-ul-article-number">{number}</p>
-                  </div>
-                  <h2 className="Main-ul-article-h2">{title}</h2>
-                  <p className="Main-ul-article-p">{text}</p>
-                </article>
-              </li>
-            ))}
-          </ul>
-        </div>
+        <ListProducts listProducts={ProductData} />
       </section>
-      <section className="Main-seccion2">
-        <figure className="Main-seccion2-figure">
-          <img
-            className="Main-seccion2-img"
-            src="images/image-founder.webp"
-            alt="image of the founder"
-          />
-        </figure>
-        <article className="Main-seccion2-article">
-          <h3 className="Main-seccion2-h3">Be the first to test</h3>
-          <p className="Main-seccion2-p">
-            Hi, I'm Louis Graham, the founder of the company. Book a demo call
-            with me to become a beta tester for our app and kickstart your
-            company. Apply for access below and I’ll be in touch to schedule a
-            call.
-          </p>
-          <GreenButton> Apply for access </GreenButton>
-        </article>
-      </section>
+      <Card />
     </main>
+  );
+};
+
+const ListProducts: React.FC<ProductsListPrpos> = ({ listProducts }) => {
+  return (
+    <div className="Main-div">
+      <ul className="Main-ul">
+        {listProducts?.map(({ number, title, text }) => (
+          <ProductItem key={number} number={number} title={title} text={text} />
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+const ProductItem: React.FC<Products> = ({ number, title, text }) => {
+  return (
+    <li className="Main-li Main-el-hidden ">
+      <article className="Main-ul-article">
+        <div className="Main-ul-article-circle">
+          <p className="Main-ul-article-number">{number}</p>
+        </div>
+        <h2 className="Main-ul-article-h2">{title}</h2>
+        <p className="Main-ul-article-p">{text}</p>
+      </article>
+    </li>
+  );
+};
+
+const Card = (): JSX.Element => {
+  return (
+    <section className="Main-seccion2 Main-el-hidden">
+      <figure className="Main-seccion2-figure">
+        <img
+          className="Main-seccion2-img"
+          src="images/image-founder.webp"
+          alt="image of the founder"
+        />
+      </figure>
+      <article className="Main-seccion2-article">
+        <h3 className="Main-seccion2-h3">Be the first to test</h3>
+        <p className="Main-seccion2-p">
+          Hi, I'm Louis Graham, the founder of the company. Book a demo call
+          with me to become a beta tester for our app and kickstart your
+          company. Apply for access below and I’ll be in touch to schedule a
+          call.
+        </p>
+        <GreenButton> Apply for access </GreenButton>
+      </article>
+    </section>
   );
 };
 
