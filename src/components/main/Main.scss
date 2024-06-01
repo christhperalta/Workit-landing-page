@@ -1,23 +1,16 @@
 .Main {
   position: relative;
   z-index: -1;
-  overflow: hidden;
 
   &-seccion1 {
     position: relative;
-    margin-bottom: 5rem;
-    min-height: 66.875rem;
-  }
-  &-div {
-    position: absolute;
-    top: -90px;
+    top: -20px;
     width: 100%;
     max-width: 69.625rem;
-    padding: 0 0.9688rem;
-    background: url("images/Rectangle-purple.svg") no-repeat;
+    padding: 10.9556rem 0.9688rem 0 0.9688rem;
+    background: url("images/Rectangle2.svg") no-repeat center;
     background-size: cover;
-    z-index: 9999;
-    padding-top: 15.3125rem;
+    margin-bottom: 3.75rem;
   }
 
   &-ul {
@@ -28,8 +21,10 @@
   &-li:nth-last-child(-n + 1) {
     margin-bottom: 4.4819rem;
   }
-
   &-li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition: 0.3s ease-in-out;
   }
 
@@ -80,6 +75,7 @@
   }
 
   &-seccion2 {
+    position: relative;
     transition: 0.3s ease-in-out;
     display: flex;
     flex-direction: column;
@@ -102,6 +98,13 @@
     background-color: var(--Dark-Purple);
     padding: 2rem 1.9688rem;
   }
+
+  &-pattern3 {
+    width: 10.8125rem;
+    position: absolute;
+    display: none;
+  }
+
   &-seccion2-h3 {
     font-size: 2rem;
     font-family: var(--tipo-secundaria);
@@ -115,5 +118,63 @@
     font-size: 1rem;
     line-height: 1.75rem;
     color: var(--White);
+  }
+
+  @media (37.5rem <= width <= 52.125rem) {
+    &-seccion1 {
+      padding-top: 12.735rem;
+    }
+    &-ul {
+      gap: 3rem;
+    }
+
+    &-li {
+      flex-direction: row;
+      justify-content: center;
+      gap: 2rem;
+    }
+    &-ul-article-circle {
+      align-self: flex-end;
+    }
+
+    &-ul-article {
+      align-items: flex-start;
+      max-width: 30.8125rem;
+      gap: 1rem;
+    }
+
+    &-pattern3 {
+      bottom: 3%;
+      right: 10%;
+      display: block;
+    }
+
+    &-ul-article-p {
+      text-align: left;
+    }
+
+    &-seccion2-figure {
+      align-self: flex-start;
+    }
+
+    &-seccion2-article {
+      top: -22%;
+      left: 9%;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      max-width: 32.125rem;
+      padding: 3rem 3.5313rem;
+    }
+
+    &-seccion2-h3 {
+      text-align: left;
+      font-size: 3rem;
+      line-height: 56px;
+      margin-bottom: 1rem;
+    }
+    &-seccion2-p {
+      text-align: left;
+    }
   }
 }

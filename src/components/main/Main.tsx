@@ -39,6 +39,8 @@ const Main = (): JSX.Element => {
   const handleCallback = (entries: IntersectionObserverEntry[]): void => {
     const [entry] = entries;
 
+    console.log(entry);
+
     if (!entry.isIntersecting) return;
     entry.target.classList.remove("Main-el-hidden");
   };
@@ -48,14 +50,12 @@ const Main = (): JSX.Element => {
 
     const observer = new IntersectionObserver(handleCallback, {
       root: null,
-      threshold: 0.15,
+      threshold: 0.5,
     });
 
     elementsRef.current.forEach((element) => {
       observer.observe(element);
     });
-
-    console.log(elementsRef.current);
 
     return () => {
       if (elementsRef.current) {
@@ -78,23 +78,21 @@ const Main = (): JSX.Element => {
 
 const ListProducts: React.FC<ProductsListPrpos> = ({ listProducts }) => {
   return (
-    <div className="Main-div">
-      <ul className="Main-ul">
-        {listProducts?.map(({ number, title, text }) => (
-          <ProductItem key={number} number={number} title={title} text={text} />
-        ))}
-      </ul>
-    </div>
+    <ul className="Main-ul">
+      {listProducts?.map(({ number, title, text }) => (
+        <ProductItem key={number} number={number} title={title} text={text} />
+      ))}
+    </ul>
   );
 };
 
 const ProductItem: React.FC<Products> = ({ number, title, text }) => {
   return (
     <li className="Main-li Main-el-hidden ">
+      <div className="Main-ul-article-circle">
+        <p className="Main-ul-article-number">{number}</p>
+      </div>
       <article className="Main-ul-article">
-        <div className="Main-ul-article-circle">
-          <p className="Main-ul-article-number">{number}</p>
-        </div>
         <h2 className="Main-ul-article-h2">{title}</h2>
         <p className="Main-ul-article-p">{text}</p>
       </article>
@@ -122,6 +120,11 @@ const Card = (): JSX.Element => {
         </p>
         <GreenButton> Apply for access </GreenButton>
       </article>
+      <img
+        className="Main-pattern3"
+        src="images/bg-pattern-3.svg"
+        alt="pattern-3"
+      />
     </section>
   );
 };

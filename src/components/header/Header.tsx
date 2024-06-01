@@ -4,6 +4,16 @@ import "./Header.scss";
 const Header = (): JSX.Element => {
   return (
     <header className="Header">
+      <img
+        className="Header-pattern"
+        src="images/bg-pattern-1.svg"
+        alt="pattern-1"
+      />
+      <img
+        className="Header-pattern2"
+        src="images/bg-pattern-2.svg"
+        alt="pattern-2"
+      />
       <section className="Header-section">
         <div className="Header-div">
           <Logo />
