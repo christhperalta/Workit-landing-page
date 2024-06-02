@@ -39,8 +39,6 @@ const Main = (): JSX.Element => {
   const handleCallback = (entries: IntersectionObserverEntry[]): void => {
     const [entry] = entries;
 
-    console.log(entry);
-
     if (!entry.isIntersecting) return;
     entry.target.classList.remove("Main-el-hidden");
   };
@@ -50,7 +48,7 @@ const Main = (): JSX.Element => {
 
     const observer = new IntersectionObserver(handleCallback, {
       root: null,
-      threshold: 0.5,
+      threshold: 0.1,
     });
 
     elementsRef.current.forEach((element) => {
@@ -78,7 +76,7 @@ const Main = (): JSX.Element => {
 
 const ListProducts: React.FC<ProductsListPrpos> = ({ listProducts }) => {
   return (
-    <ul className="Main-ul">
+    <ul className="Main-ul Main-el-hidden">
       {listProducts?.map(({ number, title, text }) => (
         <ProductItem key={number} number={number} title={title} text={text} />
       ))}
@@ -88,7 +86,7 @@ const ListProducts: React.FC<ProductsListPrpos> = ({ listProducts }) => {
 
 const ProductItem: React.FC<Products> = ({ number, title, text }) => {
   return (
-    <li className="Main-li Main-el-hidden ">
+    <li className="Main-li  ">
       <div className="Main-ul-article-circle">
         <p className="Main-ul-article-number">{number}</p>
       </div>
@@ -118,7 +116,7 @@ const Card = (): JSX.Element => {
           company. Apply for access below and I’ll be in touch to schedule a
           call.
         </p>
-        <GreenButton> Apply for access </GreenButton>
+        <GreenButton>Apply for access</GreenButton>
       </article>
       <img
         className="Main-pattern3"

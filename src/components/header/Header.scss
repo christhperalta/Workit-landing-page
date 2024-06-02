@@ -1,11 +1,11 @@
 .Header {
   position: relative;
   width: 100%;
+  z-index: 1;
   height: 30.1069rem;
   background-color: #979797;
   background: url("images/Rectangle.svg") no-repeat center;
   background-size: cover;
-  // z-index: 100;
 
   &-pattern,
   &-pattern2 {
@@ -31,12 +31,7 @@
     align-items: center;
     justify-content: space-between;
   }
-  &-p {
-    color: var(--White);
-    border-bottom: 0.1875rem solid var(--Eucaplyptus);
-    letter-spacing: 0.0625rem;
-    line-height: 2rem;
-  }
+
   &-article {
     display: flex;
     flex-direction: column;
@@ -53,11 +48,11 @@
   }
 
   &-article-span {
+    position: relative;
+    font-size: inherit;
     text-align: center;
     color: currentColor;
-    font-size: 3.125rem;
     letter-spacing: 0.0625rem;
-    line-height: 3.125rem;
     border-bottom: 0.1875rem solid var(--Eucaplyptus);
   }
 
@@ -68,12 +63,10 @@
   }
 
   &-hero {
-    // z-index: 200;
     width: 18.305rem;
-    // max-width: 20rem;
   }
 
-  @media (37.5rem <= width <= 50rem) {
+  @media (37.5rem <= width <= 52.125rem) {
     & {
       height: 33.765rem;
     }
@@ -109,6 +102,49 @@
 
     &-hero {
       width: 29.4025rem;
+    }
+  }
+
+  @media (52.125rem <= width) {
+    & {
+      display: flex;
+      // width: 100%;
+      justify-content: center;
+      height: 45.625rem;
+    }
+
+    &-article {
+      margin-top: 3.4375rem;
+    }
+
+    &-pattern {
+      display: block;
+      left: -8.5%;
+      top: 20%;
+    }
+
+    &-pattern2 {
+      display: block;
+      left: 92%;
+      top: 50%;
+    }
+
+    &-section {
+      width: 100%;
+    }
+
+    &-h1 {
+      margin-bottom: 2.3125rem;
+      max-width: 38.75rem;
+      font-size: 5rem;
+    }
+
+    &-figure {
+      margin-top: 3.125rem;
+    }
+
+    &-hero {
+      width: 47.9375rem;
     }
   }
 }

@@ -1,0 +1,16 @@
+.Button {
+  padding: 0.75rem 1.4688rem 0.6875rem 1.4688rem;
+  font-weight: bold;
+  line-height: 2rem;
+  cursor: pointer;
+  color: #24053e;
+  background-color: var(--Eucaplyptus);
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    transition: 0.1s ease-in;
+    color: var(--Eucaplyptus);
+    background-color: transparent;
+    outline: 2px solid var(--Eucaplyptus);
+  }
+}

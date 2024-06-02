@@ -1,0 +1,13 @@
+.ApplyButton {
+  color: var(--White);
+  border-bottom: 0.1875rem solid var(--Eucaplyptus);
+  letter-spacing: 0.0625rem;
+  line-height: 2rem;
+  transition: 0.2s ease-in-out;
+
+  &:hover {
+    transition: 0.1s ease-in;
+    cursor: pointer;
+    color: var(--Eucaplyptus);
+  }
+}

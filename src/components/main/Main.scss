@@ -1,12 +1,12 @@
 .Main {
   position: relative;
-  z-index: -1;
+
+  // z-index: -1;
 
   &-seccion1 {
     position: relative;
     top: -20px;
     width: 100%;
-    max-width: 69.625rem;
     padding: 10.9556rem 0.9688rem 0 0.9688rem;
     background: url("images/Rectangle2.svg") no-repeat center;
     background-size: cover;
@@ -16,7 +16,9 @@
   &-ul {
     display: flex;
     flex-direction: column;
+    max-width: 69.625rem;
     gap: 2.5rem;
+    transition: 0.3s ease-in-out;
   }
   &-li:nth-last-child(-n + 1) {
     margin-bottom: 4.4819rem;
@@ -25,7 +27,6 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    transition: 0.3s ease-in-out;
   }
 
   &-ul-article {
@@ -81,7 +82,6 @@
     flex-direction: column;
     align-items: center;
     padding: 0 0.9688rem;
-    max-width: 69.625rem;
     height: 37.6875rem;
   }
 
@@ -120,7 +120,7 @@
     color: var(--White);
   }
 
-  @media (37.5rem <= width <= 52.125rem) {
+  @media (37.5rem <= width <= 56.25rem) {
     &-seccion1 {
       padding-top: 12.735rem;
     }
@@ -175,6 +175,80 @@
     }
     &-seccion2-p {
       text-align: left;
+    }
+  }
+
+  @media (56.3125rem<= width) {
+    & {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    &-seccion1 {
+      width: 100%;
+      top: -4.375rem;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+      padding-top: 18.75rem;
+      margin-bottom: 5rem;
+    }
+    &-ul {
+      flex-direction: row;
+      padding-bottom: 12.5rem;
+
+      gap: 3rem;
+    }
+
+    &-pattern3 {
+      bottom: 3%;
+      right: 10%;
+      display: block;
+    }
+
+    &-ul-article-p {
+      text-align: center;
+    }
+
+    &-seccion2-figure {
+      align-self: flex-start;
+    }
+
+    &-seccion2-article {
+      top: -22%;
+      left: 9%;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      max-width: 32.125rem;
+      padding: 3rem 3.5313rem;
+    }
+
+    &-seccion2 {
+      max-width: 69.5rem;
+      align-self: center;
+      width: 100%;
+      justify-content: center;
+    }
+
+    &-seccion2-h3 {
+      text-align: left;
+      font-size: 3rem;
+      line-height: 56px;
+      margin-bottom: 1rem;
+    }
+    &-seccion2-p {
+      text-align: left;
+    }
+
+    &-seccion2-article {
+      top: -40%;
+      left: 14%;
+      max-width: 45.625rem;
+    }
+
+    &-seccion2-figure {
+      width: 29.8125rem;
     }
   }
 }

@@ -1,4 +1,4 @@
-import { GreenButton, Logo } from "..";
+import { ApplyButton, GreenButton, Logo } from "..";
 import "./Header.scss";
 
 const Header = (): JSX.Element => {
@@ -17,7 +17,7 @@ const Header = (): JSX.Element => {
       <section className="Header-section">
         <div className="Header-div">
           <Logo />
-          <p className="Header-p">Apply for access</p>
+          <ApplyButton>Apply for access</ApplyButton>
         </div>
         <article className="Header-article">
           <h1 className="Header-h1">

@@ -1,17 +1,12 @@
 import { ReactNode } from "react";
-import "./Button.scss";
+import "./GreenButton.scss";
 
 interface ButtonProps {
-  color?: string;
   children: ReactNode;
 }
 
-const GreenButton: React.FC<ButtonProps> = ({ children, color }) => {
-  return (
-    <button className="Button" style={{ backgroundColor: color }}>
-      {children}
-    </button>
-  );
+const GreenButton: React.FC<ButtonProps> = ({ children }) => {
+  return <button className="Button">{children}</button>;
 };
 
 export default GreenButton;
