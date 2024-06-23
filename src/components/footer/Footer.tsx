@@ -7,9 +7,9 @@ interface FooterProps {
 }
 
 const socialArr: FooterProps[] = [
-  { img: "images/icon-facebook.svg", name: "facebook" },
-  { img: "images/icon-instagram.svg", name: "instagram" },
-  { img: "images/icon-twitter.svg", name: "twitter" },
+  { img: "/src/images/icon-facebook.svg", name: "facebook" },
+  { img: "/src/images/icon-instagram.svg", name: "instagram" },
+  { img: "/src/images/icon-twitter.svg", name: "twitter" },
 ];
 
 const Footer = (): JSX.Element => {

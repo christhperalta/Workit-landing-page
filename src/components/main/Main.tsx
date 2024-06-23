@@ -104,7 +104,7 @@ const Card = (): JSX.Element => {
       <figure className="Main-seccion2-figure">
         <img
           className="Main-seccion2-img"
-          src="images/image-founder.webp"
+          src="/src/images/image-founder.webp"
           alt="image of the founder"
         />
       </figure>
@@ -120,7 +120,7 @@ const Card = (): JSX.Element => {
       </article>
       <img
         className="Main-pattern3"
-        src="images/bg-pattern-3.svg"
+        src="/src/images/bg-pattern-3.svg"
         alt="pattern-3"
       />
     </section>
