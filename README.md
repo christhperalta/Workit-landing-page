@@ -6,7 +6,7 @@ This is a solution to the [Workit landing page challenge on Frontend Mentor](htt
 
 ### Screenshot
 
-![](./public/images/preview.png)
+![](./public/images/preview.jpg)
 
 
 ### Links
