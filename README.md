@@ -1,12 +1,12 @@
-# Frontend Mentor - GitHub user search app solution
+# Frontend Mentor - Workit landing page solution
 
-This is a solution to the [GitHub user search app challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/github-user-search-app-Q09YOgaH6). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
+This is a solution to the [Workit landing page challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/workit-landing-page-2fYnyle5lu/hub). Frontend Mentor challenges help you improve your coding skills by building realistic projects. 
 
 
 
 ### Screenshot
 
-![](./public/design/github-search-app.png)
+![](./public/images/preview.png)
 
 
 ### Links
