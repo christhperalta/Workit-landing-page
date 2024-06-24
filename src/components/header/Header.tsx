@@ -6,12 +6,12 @@ const Header = (): JSX.Element => {
     <header className="Header">
       <img
         className="Header-pattern"
-        src="/src/images/bg-pattern-1.svg"
+        src="./images/bg-pattern-1.svg"
         alt="pattern-1"
       />
       <img
         className="Header-pattern2"
-        src="/src/images/bg-pattern-2.svg"
+        src="./images/bg-pattern-2.svg"
         alt="pattern-2"
       />
       <section className="Header-section">
@@ -30,7 +30,7 @@ const Header = (): JSX.Element => {
         <figure className="Header-figure">
           <img
             className="Header-hero"
-            src="/src/images/image-hero.webp"
+            src="./images/image-hero.webp"
             alt="Phone Image"
           />
         </figure>

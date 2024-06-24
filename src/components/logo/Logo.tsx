@@ -10,7 +10,7 @@ const Logo: React.FC<LogoProps> = ({ dark }) => {
     <a className="Logo" href="#">
       <img
         className="Logo-img"
-        src={dark ? "/src/images/logo-dark.svg" : "/src/images/logo-light.svg"}
+        src={dark ? "./images/logo-dark.svg" : "./images/logo-light.svg"}
         alt="logo"
       />
     </a>
